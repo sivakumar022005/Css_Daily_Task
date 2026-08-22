@@ -1,0 +1,156 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background: #111;
+    color: white;
+}
+
+/* Header */
+
+header {
+    text-align: center;
+    padding: 50px 20px 30px;
+}
+
+header h1 {
+    font-size: 45px;
+    margin-bottom: 10px;
+    color: #00e5ff;
+}
+
+header p {
+    color: #aaa;
+    font-size: 18px;
+}
+
+/* Gallery */
+
+.gallery {
+    width: 90%;
+    max-width: 1200px;
+    margin: 30px auto 60px;
+
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+}
+
+/* Gallery Item */
+
+.gallery-item {
+    height: 300px;
+    position: relative;
+    overflow: hidden;
+    border-radius: 15px;
+    cursor: pointer;
+
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.5);
+
+    animation: fadeIn 1s ease forwards;
+}
+
+/* Image */
+
+.gallery-item img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+
+    transition: transform 0.6s ease;
+}
+
+/* Zoom effect */
+
+.gallery-item:hover img {
+    transform: scale(1.15);
+}
+
+/* Overlay */
+
+.overlay {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+
+    width: 100%;
+    padding: 30px 20px;
+
+    background: linear-gradient(
+        transparent,
+        rgba(0, 0, 0, 0.9)
+    );
+
+    transform: translateY(100%);
+    transition: transform 0.5s ease;
+}
+
+/* Show overlay */
+
+.gallery-item:hover .overlay {
+    transform: translateY(0);
+}
+
+.overlay h2 {
+    color: #00e5ff;
+    margin-bottom: 8px;
+}
+
+.overlay p {
+    color: #ddd;
+}
+
+/* Hover glow */
+
+.gallery-item:hover {
+    box-shadow: 0 0 25px #00e5ff;
+}
+
+/* Animation */
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Footer */
+
+footer {
+    text-align: center;
+    padding: 25px;
+    background: #080808;
+    color: #777;
+}
+
+/* Responsive */
+
+@media (max-width: 900px) {
+    .gallery {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (max-width: 600px) {
+    header h1 {
+        font-size: 32px;
+    }
+
+    .gallery {
+        grid-template-columns: 1fr;
+    }
+
+    .gallery-item {
+        height: 280px;
+    }
+}
