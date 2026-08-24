@@ -1,0 +1,257 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background-color: #111;
+    color: white;
+    font-family: Arial, sans-serif;
+}
+
+
+/* Navbar */
+
+.navbar {
+    height: 70px;
+    background-color: #111;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 6%;
+    position: fixed;
+    width: 100%;
+    top: 0;
+    z-index: 1000;
+}
+
+.logo {
+    color: #e50914;
+    font-size: 28px;
+    font-weight: bold;
+}
+
+.navbar nav {
+    display: flex;
+    gap: 30px;
+}
+
+.navbar nav a {
+    color: white;
+    text-decoration: none;
+    font-size: 15px;
+}
+
+.navbar nav a:hover {
+    color: #e50914;
+}
+
+.login {
+    background-color: #e50914;
+    border: none;
+    color: white;
+    padding: 10px 22px;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+
+/* Hero */
+
+.hero {
+    height: 650px;
+
+    background-image:
+        linear-gradient(to right, #111 10%, transparent 70%),
+        linear-gradient(to top, #111 2%, transparent 40%),
+        url("https://image.tmdb.org/t/p/original/x2LSRK2Cm7MZhjluni1msVJ3wDF.jpg");
+
+    background-size: cover;
+    background-position: center;
+    display: flex;
+    align-items: center;
+    padding-left: 7%;
+    margin-top: 70px;
+}
+
+.hero-content {
+    width: 500px;
+}
+
+.hero-content h1 {
+    font-size: 55px;
+    margin-bottom: 15px;
+}
+
+.hero-content p {
+    line-height: 1.6;
+    margin-bottom: 15px;
+}
+
+.info {
+    color: #ddd;
+}
+
+.buttons button {
+    padding: 13px 25px;
+    border: none;
+    border-radius: 5px;
+    margin-right: 10px;
+    font-size: 15px;
+    cursor: pointer;
+}
+
+.watch {
+    background-color: white;
+    color: black;
+}
+
+.more {
+    background-color: rgba(100, 100, 100, 0.8);
+    color: white;
+}
+
+
+/* Movie Sections */
+
+.movie-section {
+    padding: 30px 6%;
+}
+
+.movie-section h2,
+.categories h2 {
+    font-size: 25px;
+    margin-bottom: 20px;
+}
+
+.movie-container {
+    display: flex;
+    gap: 18px;
+    overflow-x: auto;
+}
+
+.movie-container::-webkit-scrollbar {
+    display: none;
+}
+
+
+/* Movie Card */
+
+.movie-card {
+    min-width: 200px;
+    position: relative;
+    transition: 0.3s;
+}
+
+.movie-card img {
+    width: 200px;
+    height: 290px;
+    object-fit: cover;
+    border-radius: 6px;
+}
+
+.movie-card h3 {
+    margin-top: 8px;
+    font-size: 16px;
+}
+
+.movie-card:hover {
+    transform: scale(1.08);
+}
+
+
+/* Number */
+
+.number {
+    position: absolute;
+    left: 8px;
+    bottom: 35px;
+    font-size: 50px;
+    font-weight: bold;
+    color: white;
+    z-index: 2;
+}
+
+
+/* Categories */
+
+.categories {
+    padding: 40px 6%;
+}
+
+.category-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 15px;
+}
+
+.category {
+    background-color: #222;
+    padding: 18px 35px;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.category:hover {
+    background-color: #e50914;
+}
+
+
+/* Footer */
+
+footer {
+    margin-top: 40px;
+    padding: 40px 6%;
+    background-color: #000;
+    text-align: center;
+}
+
+footer h2 {
+    color: #e50914;
+    margin-bottom: 15px;
+}
+
+footer p {
+    color: #aaa;
+    margin-bottom: 15px;
+}
+
+footer a {
+    color: #aaa;
+    text-decoration: none;
+    margin: 0 10px;
+}
+
+
+/* Responsive */
+
+@media (max-width: 768px) {
+
+    .navbar nav {
+        display: none;
+    }
+
+    .hero {
+        height: 550px;
+        padding-left: 5%;
+    }
+
+    .hero-content {
+        width: 90%;
+    }
+
+    .hero-content h1 {
+        font-size: 40px;
+    }
+
+    .movie-card {
+        min-width: 150px;
+    }
+
+    .movie-card img {
+        width: 150px;
+        height: 220px;
+    }
+}
