@@ -1,0 +1,363 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>CSS Daily Tasks | Developer Dashboard</title>
+
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <style>
+        body {
+            background: #0b1120;
+            font-family: Arial, sans-serif;
+        }
+
+        .task-card {
+            transition: all 0.3s ease;
+        }
+
+        .task-card:hover {
+            transform: translateY(-7px);
+            border-color: #38bdf8;
+            box-shadow: 0 10px 30px rgba(56,189,248,0.12);
+        }
+
+        .gradient-text {
+            background: linear-gradient(90deg, #38bdf8, #818cf8);
+            -webkit-background-clip: text;
+            color: transparent;
+        }
+    </style>
+</head>
+
+<body class="text-white">
+
+    <!-- Navbar -->
+    <nav class="border-b border-gray-800">
+        <div class="max-w-7xl mx-auto px-6 py-5 flex justify-between items-center">
+
+            <h1 class="text-2xl font-bold">
+                <span class="text-sky-400">CSS</span>Code.
+            </h1>
+
+            <div class="hidden md:flex gap-8 text-gray-400">
+                <a href="#home" class="hover:text-sky-400">Home</a>
+                <a href="#tasks" class="hover:text-sky-400">Tasks</a>
+                <a href="#about" class="hover:text-sky-400">About</a>
+            </div>
+
+            <a href="https://github.com/sivakumar022005/Css_Daily_Task"
+               target="_blank"
+               class="bg-sky-500 hover:bg-sky-600 px-5 py-2 rounded-lg font-semibold">
+                GitHub ↗
+            </a>
+
+        </div>
+    </nav>
+
+
+    <!-- Hero Section -->
+    <section id="home" class="max-w-7xl mx-auto px-6 py-24">
+
+        <p class="text-sky-400 uppercase tracking-widest text-sm font-semibold">
+            My Frontend Development Journey
+        </p>
+
+        <h2 class="text-4xl md:text-6xl font-bold mt-5 leading-tight">
+            Mastering <span class="gradient-text">CSS</span>
+            One Day at a Time.
+        </h2>
+
+        <p class="text-gray-400 text-lg mt-6 max-w-2xl leading-8">
+            Welcome to my CSS daily practice collection.
+            This repository showcases my learning journey through
+            styling, layouts, animations and responsive web design.
+        </p>
+
+        <div class="flex flex-wrap gap-4 mt-8">
+
+            <a href="#tasks"
+               class="bg-sky-500 hover:bg-sky-600 px-7 py-3 rounded-lg font-semibold">
+                Explore Tasks →
+            </a>
+
+            <a href="https://github.com/sivakumar022005"
+               target="_blank"
+               class="border border-gray-700 hover:border-sky-400 px-7 py-3 rounded-lg">
+                My GitHub
+            </a>
+
+        </div>
+
+    </section>
+
+
+    <!-- Statistics -->
+    <section class="max-w-7xl mx-auto px-6 pb-20">
+
+        <div class="grid grid-cols-1 sm:grid-cols-3 gap-6">
+
+            <div class="bg-[#111c30] border border-gray-800 rounded-2xl p-7">
+                <p class="text-gray-400">Total Tasks</p>
+                <h3 id="totalTasks" class="text-4xl text-sky-400 font-bold mt-3">06</h3>
+            </div>
+
+            <div class="bg-[#111c30] border border-gray-800 rounded-2xl p-7">
+                <p class="text-gray-400">Technology</p>
+                <h3 class="text-3xl font-bold mt-3">CSS3</h3>
+            </div>
+
+            <div class="bg-[#111c30] border border-gray-800 rounded-2xl p-7">
+                <p class="text-gray-400">Learning Status</p>
+                <h3 class="text-3xl text-green-400 font-bold mt-3">Active</h3>
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- Daily Tasks -->
+    <section id="tasks" class="max-w-7xl mx-auto px-6 pb-24">
+
+        <div class="flex flex-col md:flex-row justify-between gap-6 mb-10">
+
+            <div>
+                <p class="text-sky-400 uppercase text-sm tracking-widest">
+                    My Practice
+                </p>
+
+                <h2 class="text-3xl md:text-4xl font-bold mt-3">
+                    CSS Daily Tasks
+                </h2>
+
+                <p class="text-gray-400 mt-3">
+                    Explore my daily CSS exercises and implementations.
+                </p>
+            </div>
+
+            <div class="flex flex-col sm:flex-row gap-3">
+
+                <input
+                    type="text"
+                    id="searchInput"
+                    placeholder="Search tasks..."
+                    class="bg-[#111c30] border border-gray-700 rounded-lg px-4 py-3 outline-none focus:border-sky-400"
+                >
+
+                <select
+                    id="filterSelect"
+                    class="bg-[#111c30] border border-gray-700 rounded-lg px-4 py-3 outline-none focus:border-sky-400"
+                >
+                    <option value="all">All Tasks</option>
+                    <option value="recent">Latest Task</option>
+                </select>
+
+            </div>
+
+        </div>
+
+
+        <!-- Cards -->
+        <div id="taskContainer"
+             class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+        </div>
+
+        <p id="noResults" class="hidden text-center text-gray-400 py-12">
+            No matching tasks found.
+        </p>
+
+    </section>
+
+
+    <!-- About -->
+    <section id="about" class="border-t border-gray-800">
+
+        <div class="max-w-7xl mx-auto px-6 py-16">
+
+            <h2 class="text-3xl font-bold">
+                About This Repository
+            </h2>
+
+            <p class="text-gray-400 max-w-2xl mt-5 leading-8">
+                This repository contains my daily CSS practice tasks.
+                My objective is to strengthen my frontend development
+                knowledge by implementing different CSS concepts
+                and creating responsive user interfaces.
+            </p>
+
+            <div class="flex flex-wrap gap-3 mt-7">
+
+                <span class="bg-[#111c30] border border-gray-700 px-4 py-2 rounded-lg">HTML5</span>
+                <span class="bg-[#111c30] border border-gray-700 px-4 py-2 rounded-lg">CSS3</span>
+                <span class="bg-[#111c30] border border-gray-700 px-4 py-2 rounded-lg">Flexbox</span>
+                <span class="bg-[#111c30] border border-gray-700 px-4 py-2 rounded-lg">Grid</span>
+                <span class="bg-[#111c30] border border-gray-700 px-4 py-2 rounded-lg">Responsive Design</span>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- Footer -->
+    <footer class="border-t border-gray-800 text-center py-8">
+
+        <p class="text-gray-500">
+            © 2026 Sivakumar. All Rights Reserved.
+        </p>
+
+        <p class="text-sky-400 mt-3">
+            Designed & Developed with Passion.
+        </p>
+
+    </footer>
+
+
+    <!-- JavaScript -->
+    <script>
+
+        const tasks = [
+            {
+                name: "Day 01 - CSS Task",
+                folder: "day_1_css_task_1",
+                description: "Getting started with CSS styling and basic design concepts."
+            },
+            {
+                name: "Day 02 - CSS Task",
+                folder: "day_2_css_task_2",
+                description: "Practicing CSS properties, selectors and styling techniques."
+            },
+            {
+                name: "Day 03 - CSS Task",
+                folder: "day_3_css_task_3",
+                description: "Building webpage layouts using CSS concepts."
+            },
+            {
+                name: "Day 04 - CSS Task",
+                folder: "day_4-css_task_4",
+                description: "Exploring CSS layouts and advanced styling practices."
+            },
+            {
+                name: "Day 05 - CSS Task",
+                folder: "day_5_css_task_5",
+                description: "Implementing CSS design and frontend development exercises."
+            },
+            {
+                name: "Day 08 - CSS Task",
+                folder: "day_8_css_task_8",
+                description: "Latest CSS practice and creative styling implementation."
+            }
+        ];
+
+        const container = document.getElementById("taskContainer");
+        const searchInput = document.getElementById("searchInput");
+        const filterSelect = document.getElementById("filterSelect");
+        const noResults = document.getElementById("noResults");
+
+        document.getElementById("totalTasks").textContent =
+            String(tasks.length).padStart(2, "0");
+
+        function displayTasks() {
+
+            const search = searchInput.value.toLowerCase();
+            const filter = filterSelect.value;
+
+            const filteredTasks = tasks.filter(task => {
+
+                const matchesSearch =
+                    task.name.toLowerCase().includes(search) ||
+                    task.description.toLowerCase().includes(search);
+
+                const matchesFilter =
+                    filter === "all" ||
+                    (filter === "recent" && task.folder === "day_8_css_task_8");
+
+                return matchesSearch && matchesFilter;
+
+            });
+
+            container.innerHTML = "";
+
+            noResults.classList.toggle(
+                "hidden",
+                filteredTasks.length !== 0
+            );
+
+            filteredTasks.forEach((task, index) => {
+
+                const card = document.createElement("div");
+
+                card.className =
+                    "task-card bg-[#111c30] border border-gray-800 rounded-2xl p-6";
+
+                card.innerHTML = `
+
+                    <div class="flex justify-between items-center">
+
+                        <span class="text-sky-400 text-sm font-semibold">
+                            TASK ${String(tasks.indexOf(task) + 1).padStart(2, "0")}
+                        </span>
+
+                        <span class="text-green-400 text-xs bg-green-400/10 px-3 py-1 rounded-full">
+                            Available
+                        </span>
+
+                    </div>
+
+                    <div class="mt-7">
+
+                        <div class="w-12 h-12 bg-sky-400/10 rounded-xl flex items-center justify-center text-2xl text-sky-400 font-bold">
+                            #
+                        </div>
+
+                        <h3 class="text-xl font-bold mt-5">
+                            ${task.name}
+                        </h3>
+
+                        <p class="text-gray-400 text-sm leading-6 mt-3">
+                            ${task.description}
+                        </p>
+
+                    </div>
+
+                    <div class="border-t border-gray-800 mt-6 pt-5">
+
+                        <div class="flex justify-between items-center gap-2">
+
+                            <span class="text-gray-500 text-xs">
+                                ${task.folder}
+                            </span>
+
+                            <a href="css_daily_task/${task.folder}/index.html"
+                               target="_blank"
+                               class="text-sky-400 font-semibold text-sm whitespace-nowrap hover:text-sky-300">
+                                View Task →
+                            </a>
+
+                        </div>
+
+                    </div>
+
+                `;
+
+                container.appendChild(card);
+
+            });
+
+        }
+
+        searchInput.addEventListener("input", displayTasks);
+
+        filterSelect.addEventListener("change", displayTasks);
+
+        displayTasks();
+
+    </script>
+
+</body>
+</html>
